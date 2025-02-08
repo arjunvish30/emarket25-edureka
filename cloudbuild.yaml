@@ -24,3 +24,10 @@ steps:
       --region="us-central1" \
       --images="emarket-image=us-central1-docker.pkg.dev/project-alpha12/testdocker/emarket-image:latest" \
       --source="./"
+
+# **Disable Logging**
+options:
+  logging: NONE  # Disable logging completely
+
+# **Fix: Ensure Service Account is Configured**
+serviceAccount: "projects/project-alpha12/serviceAccounts/896205892070-compute@developer.gserviceaccount.com"
