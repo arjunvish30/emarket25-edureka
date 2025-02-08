@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emarket-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emarket-prod
+  template:
+    metadata:
+      labels:
+        app: emarket-prod
+    spec:
+      containers:
+      - name: emarket
+        image: us-central1-docker.pkg.dev/project-alpha12/emarket-repo/emarket-image:latest
+        ports:
+          - containerPort: 80

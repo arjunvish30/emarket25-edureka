@@ -20,7 +20,7 @@ steps:
     - '-c'
     - |
       gcloud deploy releases create r-$BUILD_ID \
-      --delivery-pipeline="emarketpipeline" \
+      --delivery-pipeline="emarket-pipeline" \
       --region="us-central1" \
       --images="emarket-image=us-central1-docker.pkg.dev/project-alpha12/emarket-repo/emarket-image:latest" \
       --source="./"

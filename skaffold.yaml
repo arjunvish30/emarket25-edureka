@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta16
+kind: Config
+deploy:
+  kubectl:
+    manifests: ["k8s/*.yaml"]
+profiles:
+- name: nonprod-gke
+  deploy:
+    kubectl:
+      manifests: ["k8s/nonprod/*.yaml"]
+
+- name: prod-cluster
+  deploy:
+    kubectl:
+      manifests: ["k8s/prod/*.yaml"]
