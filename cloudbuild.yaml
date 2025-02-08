@@ -25,9 +25,9 @@ steps:
       --images="emarket-image=us-central1-docker.pkg.dev/project-alpha12/testdocker/emarket-image:latest" \
       --source="./"
 
-# **Disable Logging**
 options:
-  logging: NONE  # Disable logging completely
+  logging: CLOUD_LOGGING_ONLY  # Use Cloud Logging for logs
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET  # (Alternative) Use regional bucket for logs
 
 # **Fix: Ensure Service Account is Configured**
 serviceAccount: "projects/project-alpha12/serviceAccounts/896205892070-compute@developer.gserviceaccount.com"
